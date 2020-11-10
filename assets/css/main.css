@@ -7,20 +7,27 @@ body{
     display: grid;
     /* grid-template-columns: auto auto auto auto;
     grid-template-rows: 150px 100px 50px; */
-    grid-template: 300px 200px 100px / 400px 300px 200px 100px;
+
+    /* grid-template: Filas / Columnas */
+    grid-template: auto auto auto / auto auto auto auto;
+
+    /* column-gap: 10px;
+    row-gap: 10px; */
+    gap: 10px;
 }
 
 #Container .item{
     background-color: cornflowerblue;
     border: rebeccapurple 1px solid;
     padding: 10px;
-    overflow: auto;
+    /* Scroll */
+    /* overflow: auto; */
 }
 
 #Container .item:nth-of-type(5){
     background-color: saddlebrown;
     display: grid;
-    grid-template: 75px 75px / 90px 90px 90px 90px;
+    grid-template: auto auto / auto auto auto;
 }
 
 #Container .item .item{
