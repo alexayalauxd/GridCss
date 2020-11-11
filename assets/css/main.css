@@ -9,6 +9,45 @@ body{
     background-color: #292929;
     color: #c5c5c5;
 }
+.view, .item{
+    background-color: cornflowerblue;
+    border: rebeccapurple 1px solid;
+    padding: 10px;
+}
+
+/*--------------------------------------------------------------
+# RC
+--------------------------------------------------------------*/
+#RC{
+    display: grid;
+    grid-template-rows: repeat(3, 200px);
+    grid-template-columns: repeat(4, 200px);
+    height: 80vh;
+    gap: 5px;
+
+    justify-content: space-around;
+    align-content: space-evenly;
+}
+
+/*--------------------------------------------------------------
+# Align
+--------------------------------------------------------------*/
+#Align{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    height: 80vh;
+
+    justify-items: center;
+    align-items: center;
+}
+#Align .grids:nth-of-type(6){
+    justify-self: end;
+}
+#Align .grids:nth-of-type(7){
+    justify-self: start;
+}
 
 /*--------------------------------------------------------------
 # Grids
@@ -18,11 +57,10 @@ body{
     grid-template-rows: repeat(2, 150px);
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
-}
-#Grids .view{
-    background-color: cornflowerblue;
-    border: rebeccapurple 1px solid;
-    padding: 10px;
+    /* grid-auto-flow: row; <-- Predeterminado*/ 
+    /* grid-auto-rows: 200px; */
+    /* grid-auto-flow: column; */
+    /* grid-auto-columns: 100px; */
 }
 #Grids .grids:nth-of-type(1){
     background-color: rebeccapurple;
@@ -79,13 +117,6 @@ body{
     /* column-gap: 10px;
     row-gap: 10px; */
     gap: 10px;
-}
-#Container .item, .item{
-    background-color: cornflowerblue;
-    border: rebeccapurple 1px solid;
-    padding: 10px;
-    /* Scroll */
-    /* overflow: auto; */
 }
 #Container .item:nth-of-type(5){
     background-color: saddlebrown;
