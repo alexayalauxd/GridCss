@@ -1,0 +1,23 @@
+#grids{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 5px;
+    justify-content: center;
+}
+#grids .item{
+    border-radius: 5px;
+    padding: 10px;
+    background: #f2f2f2;
+}
+#grids .item img{
+    max-width: 100%;
+}
+#grids .l-1, .l-4, .l-7{
+    grid-row-end: span 3;
+}
+#grids .l-2, .l-6, .l-8{
+    grid-row-end: span 2;
+}
+#grids .l-3, .l-5, .l-9{
+    grid-row-end: span 1;
+}
