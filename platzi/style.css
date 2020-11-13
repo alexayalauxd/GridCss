@@ -3,25 +3,61 @@ body{
     font-size: 16px;
     margin: 0;
 }
+p{
+    margin: 0;
+}
 #Hero{
     background-color: #23475b;
     color: white;
     padding: 1em;
+    display: grid;
+    grid-template-columns: minmax(auto, 1024px);
+    justify-content: center;
 }
-#Hero .title{
+#Hero .hero-container{
+    display: grid;
+    /* grid-template-rows: ; */
+    grid-template-columns: 70px 1fr 320px;
+    grid-template-areas: "badge title form"
+                        ". description form"
+                        ". countdown form";
+    gap: 10px;
+}
+@media screen and (max-width: 768px){
+    #Hero .hero-container{
+        grid-template-columns: 70px 1fr;
+        grid-template-areas: "badge title"
+                            "description description"
+                            "form form"
+                            "countdown countdown";
+    }
+    #Hero .hero-container .
+}
+#Hero .hero-container .badge{
+    grid-area: badge;
+}
+#Hero .hero-container .badge img{
+    max-width: 70px;
+}
+#Hero .hero-container .title{
     font-size: 2em;
     font-weight: normal;
     margin: 0;
     display: flex;
     align-items: center;
+    grid-area: title;
 }
-#Hero .form{
+#Hero .hero-container .description{
+    grid-area: description;
+}
+#Hero .hero-container .form{
     text-align: center;
     background-color: rgba(255, 255, 255, .9);
     padding: 1.5em;
     border-radius: 10px;
+    grid-area: form;
 }
-#Hero .form input{
+#Hero .hero-container .form input{
     width: 100%;
     padding: 10px;
     font-size: 1em;
@@ -30,12 +66,13 @@ body{
     box-sizing: border-box;
     margin-bottom: 10px;
 }
-#Hero .form p{
+#Hero .hero-container .form p{
     font-size: 1.2em;
     color: #3a3b3f;
     margin-bottom: 1em;
 }
-#Hero button{
+
+#Hero .hero-container .form button{
     background-color: #98ca3f;
     color: white;
     padding: 10px 15px;
@@ -44,4 +81,23 @@ body{
     font-size: 1em;
     border-bottom: 5px solid #6d932b;
     display: inline-block;
+}
+#Hero .hero-container .countdown{
+    grid-area: countdown;
+}
+#Hero .hero-container .countdown p{
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 300;
+}
+#Hero .hero-container .countdown span{
+    font-size: 2em;
+}
+#Hero .hero-container .countdown span:after{
+    content: ":";
+    display: inline-block;
+    margin: 0 5px;
+}
+#Hero .hero-container .countdown span:last-child:after{
+    display: none;
 }
